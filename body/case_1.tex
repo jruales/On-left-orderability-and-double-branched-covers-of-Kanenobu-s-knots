@@ -1,6 +1,8 @@
 \section{Case 1}
 \label{section:case1}
 
+\noindent{}It would be possible to disprove left-orderability in Cases 1 and 16 by finding a word $w$ that admits only positive occurrences of the generators $a$, $b$, $c$, and $d$ and that satisfies $w=1$ when considered as an element of $G_n$. We were not able to find such a word or disprove its existence. Sections \ref{section:case1} and \ref{section:case16} are presented in lieu of this more desirable solution.\\
+
 \noindent{}In order to show Case 1 ($a,b,c,d>1$) is not possible if $G_n$ is left-orderable, we consider sub-cases (see Table~\ref{table:case1.-}).
 
 \begin{table}[ht]
@@ -21,193 +23,11 @@ Case \hspace{10 pt} & $a^{-1}d$\hspace{10 pt} & $b^{-1}d$\hspace{10 pt} & $b^{-1
 \label{table:case1.-}
 \end{table}
 
-\noindent{}In order to justify that these sub-cases represent all possibilities if $G_n$ is left-orderable, we must first show that $a^{-1}d\neq{}1$, $b^{-1}d\neq{}1$, and $b^{-1}c\neq{}1$.
-
-\subsection{Proof that $a^{-1}d\neq{}1$ in Case 1}
-\noindent{}Note: unless otherwise stated, all lemmas in this section assume $G_n$ is left-orderable and assume signs as in Case 1.
-
-\begin{lemma} If $a^{-1}d=1$, then $b^{-1}d>1$.
-\label{lemma:id:Ad:Bd}
-\end{lemma}
-\begin{proof} Suppose $a^{-1}d=1$. We know $b^{-1}a>1$, and
-\begin{align*}
-(d^{-1}b)(b^{-1}a)=d^{-1}a=1.
-\end{align*}
-This shows that $d^{-1}b<1$, or equivalently that $b^{-1}d>1$.
-\end{proof}
-
-\begin{lemma} If $a^{-1}d=1$, then $d^{-1}c>1$.
-\label{lemma:id:Ad:Dc}
-\end{lemma}
-\begin{proof} Suppose $a^{-1}d=1$. Starting from the third group relation, we have:
-\begin{align*}
-(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
-\Rightarrow{}c^{2}b^{-1}c(c^{-1}d)^{10n+3}&=1\\
-\Rightarrow{}c^{2}(b^{-1}d)(c^{-1}d)^{10n+2}&=1.
-\end{align*}
-But $b^{-1}d>1$ by Lemma~\ref{lemma:id:Ad:Bd} and $c>1$ by assumption in Case 1. Therefore, $c^{-1}d$ must be negative, showing that $d^{-1}c>1$.
-\end{proof}
-
-\begin{lemma} If $a^{-1}d=1$, then $a^{-1}c>1$.
-\label{lemma:id:Ad:Ac}
-\end{lemma}
-\begin{proof} Suppose $a^{-1}d=1$, then:
-\begin{align*}
-(d^{-1}c)(c^{-1}a)=d^{-1}a=1.
-\end{align*}
-This shows that $c^{-1}a<1$ since $d^{-1}c>1$ by Lemma~\ref{lemma:id:Ad:Dc}, therefore $a^{-1}c>1$.
-\end{proof}
-
-\begin{proposition} If $G_n$ is left-orderable, then $a^{-1}d\neq{}1$ in Case 1.
-\label{proposition:id:Ad}
-\label{proposition:id:dA}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable and suppose (for contradiction) that $a^{-1}d=d^{-1}a=1$. By Lemma~\ref{lemma:eq16}, we have:
-\begin{align}
-ad^{-1}a&=bc^{-1}b\nonumber{}\\
-\Rightarrow{}b^{-1}a(d^{-1}a)b^{-1}c&=1\nonumber{}\\
-\Rightarrow{}b^{-1}a(1)b^{-1}c&=1\\
-\Rightarrow{}(b^{-1}a)b^{-1}(aa^{-1})c&=1\nonumber{}\\
-\Rightarrow{}(b^{-1}a)(b^{-1}a)(a^{-1}c)&=1.\label{proposition:id:Ad:contradiction}
-\end{align}
-Now $b^{-1}a>1$ by assumption and $a^{-1}c>1$ by Lemma~\ref{lemma:id:Ad:Ac}, thus (\ref{proposition:id:Ad:contradiction}) is a contradiction.
-\end{proof}
-
-\subsection{Proof that $b^{-1}d\neq{}1$ in Case 1}
-\noindent{}Note: unless otherwise stated, all lemmas in this section assume $G_n$ is left-orderable and assume signs as in Case 1.
-
-\begin{lemma} If $b^{-1}d=1$, then $d^{-1}a>1$.
-\label{lemma:id:Bd:Da}
-\end{lemma}
-\begin{proof} Suppose $b^{-1}d=1$, then:
-\begin{align*}
-(b^{-1}a)(a^{-1}d)=b^{-1}d=1.
-\end{align*}
-This shows that $a^{-1}d<1$ since $b^{-1}a>1$ by general assumption. Therefore, $d^{-1}a>1$.
-\end{proof}
-
-\begin{lemma} If $b^{-1}d=1$, then $c^{-1}b>1$.
-\label{lemma:id:Bd:Cb}
-\end{lemma}
-\begin{proof} Suppose $b^{-1}d=1$. By Lemma~\ref{lemma:eq8}, we have
-\begin{align}
-c^{2}b&=d^{2}a\nonumber{}\\
-\Rightarrow{}b^{-1}c^{-2}d^{2}a&=1\nonumber{}\\
-\Rightarrow{}b^{-1}(cc^{-1})c^{-2}d^{2}(dd^{-1})a&=1\nonumber{}\\
-\Rightarrow{}(b^{-1}c)(c^{-3}d^{3})(d^{-1}a)&=1.\label{lemma:id:Bd:Cb:contradiction}
-\end{align}
-Now $d^{-1}a>1$ by Lemma~\ref{lemma:id:Bd:Da} and $c^{-3}d^{3}>1$ by Corollary~\ref{corollary:inEq5}. Therefore, (\ref{lemma:id:Bd:Cb:contradiction}) shows that
-\begin{align*}
-b^{-1}c&<1\\
-\Rightarrow{}c^{-1}b&>1.\qedhere
-\end{align*}
-\end{proof}
-
-\begin{lemma} If $b^{-1}d=1$, then $c^{-1}d>1$.
-\label{lemma:id:Bd:Cd}
-\end{lemma}
-\begin{proof} Suppose $b^{-1}d=1$, then
-\begin{align*}
-(d^{-1}c)(c^{-1}b)&=d^{-1}b=1\\
-\Rightarrow{}c^{-1}d&=c^{-1}b>1.
-\end{align*}
-Where the last inequality follows from Lemma~\ref{lemma:id:Bd:Cb}.
-\end{proof}
-
-\begin{lemma} If $b^{-1}d=1$, then $ab^{-1}>1$.
-\label{lemma:id:Bd:aB}
-\end{lemma}
-\begin{proof} Suppose $b^{-1}d=1$. Starting from the first group relation, we have:
-\begin{align*}
-(a^{-1}b)^{10n}d^{-1}a^{2}&=1\\
-\Rightarrow{}(a^{-1}b)^{10n-1}(a^{-1}b)d^{-1}a^{2}&=1\\
-\Rightarrow{}a^{-1}(ba^{-1})^{10n-1}bd^{-1}a^{2}&=1\\
-\Rightarrow{}(ba^{-1})^{10n-1}b(d^{-1}a)&=1.
-\end{align*}
-This shows $ba^{-1}<1$ since $b>1$ by assumption in Case 1 and  $d^{-1}a>1$ by Lemma~\ref{lemma:id:Bd:Da}. Therefore, $ab^{-1}>1$.
-\end{proof}
-
-\begin{lemma} If $b^{-1}d=1$, then $da^{-1}b>1$.
-\label{lemma:id:Bd:dAb}
-\end{lemma}
-\begin{proof}  Suppose $b^{-1}d=1$. By Lemma~\ref{lemma:eq16}, we have:
-\begin{align*}
-ad^{-1}a&=bc^{-1}b\\
-\Rightarrow{}cb^{-1}ad^{-1}ab^{-1}&=1\\
-\Rightarrow{}(c)(b^{-1}ad^{-1})(ab^{-1})&=1.
-\end{align*}
-This shows that $b^{-1}ad^{-1}<1$, since $c>1$ in Case 1 by assumption and $ab^{-1}>1$ by Lemma~\ref{lemma:id:Bd:aB}. Therefore, $da^{-1}b>1$.
-\end{proof}
-
-\begin{lemma} If $b^{-1}d=1$, then $da^{-1}d>1$.
-\label{lemma:id:Bd:dAd}
-\end{lemma}
-\begin{proof}  Suppose $b^{-1}d=1$. Then
-\begin{align*}
-(d^{-1}ad^{-1})(da^{-1}b)&=d^{-1}b=1\\
-\Rightarrow{}da^{-1}d&=da^{-1}b>1.
-\end{align*}
-This final inequality follows from Lemma~\ref{lemma:id:Bd:dAb}.
-\end{proof}
-
-\begin{proposition} If $G_n$ is left-orderable, then $b^{-1}d\neq{}1$ in Case 1.
-\label{proposition:id:Bd}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $b^{-1}d=1$. Starting from the fourth group relation, we have:
-\begin{align*}
-d^{2}a^{-1}d(c^{-1}d)^{10n+3}&=1\\
-\Rightarrow{}(c^{-1}d)^{10n+3}d^{2}a^{-1}d&=1\\
-\Rightarrow{}(c^{-1}d)^{10n+2}(c^{-1}d)d^{2}a^{-1}d&=1\\
-\Rightarrow{}(c^{-1}d)^{10n+2}c^{-1}(bb^{-1})d(cc^{-1})d^{2}a^{-1}d&=1\\
-\Rightarrow{}(c^{-1}d)^{10n+2}(c^{-1}b)(b^{-1}dc)(c^{-1}d)(da^{-1}d)&=1\\
-\Rightarrow{}(c^{-1}d)^{10n+2}(c^{-1}b)(c)(c^{-1}d)(da^{-1}d)&=1.
-\end{align*}
-We use the fact that $b^{-1}d=1$ for the last implication. This is a contradiction, since $c^{-1}d>1$ by Lemma~\ref{lemma:id:Bd:Cd}, $c^{-1}b>1$ by Lemma~\ref{lemma:id:Bd:Cb}, $c>1$ by assumption in Case 1, and $da^{-1}d>1$ by Lemma~\ref{lemma:id:Bd:dAd}.
-\end{proof}
-
-\subsection{Proof that $b^{-1}c\neq{}1$ in Case 1}
-\noindent{}Note: unless otherwise stated, all lemmas in this section assume $G_n$ is left-orderable and assume signs as in Case 1.
-
-\begin{lemma} If $b^{-1}c=1$, then $c^{-1}a>1$.
-\label{lemma:id:Bc:Ca}
-\end{lemma}
-\begin{proof} Suppose that $b^{-1}c=1$, then:
-\begin{align*}
-(b^{-1}a)(a^{-1}c)&=b^{-1}c=1\\
-\Rightarrow{}c^{-1}a&=b^{-1}a>1.\qedhere
-\end{align*}
-\end{proof}
-
-\begin{lemma} If $b^{-1}c=1$, then $d^{-1}a>1$.
-\label{lemma:id:Bc:Da}
-\end{lemma}
-\begin{proof} Suppose that $b^{-1}c=1$. Starting from the third group relation, we have:
-\begin{align*}
-(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
-\Rightarrow{}c^{2}b^{-1}c(c^{-1}d)^{10n+3}&=1\\
-\Rightarrow{}c^{2}b^{-1}d(c^{-1}d)^{10n+2}&=1\\
-\Rightarrow{}c^{2}b^{-1}(aa^{-1})d(c^{-1}(aa^{-1})d)^{10n+2}&=1\\
-\Rightarrow{}c^{2}(b^{-1}a)(a^{-1}d)([c^{-1}a][a^{-1}d])^{10n+2}&=1.
-\end{align*}
-This shows that $a^{-1}d<1$ since $b^{-1}a>1$ by assumption, $c>1$ by assumption in Case 1, and $c^{-1}a>1$ by Lemma~\ref{lemma:id:Bc:Ca}. Therefore, $d^{-1}a>1$.
-\end{proof}
-
-\begin{proposition} If $G_n$ is left-orderable, then $b^{-1}c\neq{}1$ in Case 1.
-\label{proposition:id:Bc}
-\label{proposition:id:cB}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $b^{-1}c=1$. By Lemma~\ref{lemma:eq16}, we have:
-\begin{align*}
-ad^{-1}a&=bc^{-1}b\\
-\Rightarrow{}(b^{-1}c)(b^{-1}a)(d^{-1}a)&=1\\
-\Rightarrow{}(b^{-1}a)(d^{-1}a)&=1,\\
-\end{align*}
-where the last implication uses the fact that $b^{-1}c=1$. This is a contradiction, since $b^{-1}a>1$ by assumption and $d^{-1}a>1$ by Lemma~\ref{lemma:id:Bc:Da}.
-\end{proof}
+\noindent{}By Proposition~\ref{proposition:non-trivial}, we know that these sub-cases represent all possibilities if $G_n$ is left-orderable. We proceed by reaching a contradiction to left-orderability in each sub-case.
 $\;$
 \subsection{\Case{1}{2}{}-\case{1}{7}{}}
 
-Now that we have justified the totality of our cases, we continue by disproving left-orderability in each case. We start by showing that if $G_n$ is left-orderable, then \Cases{1}{2}{}-\case{1}{7}{} are not possible.
+We start by showing that if $G_n$ is left-orderable, then \Cases{1}{2}{}-\case{1}{7}{} are not possible.
 
 %begin{case1.ii-VII}
 
@@ -284,40 +104,10 @@ b^{-1}d>1\label{case1.i:inEq:Bd}\\
 b^{-1}c>1
 \end{align}
 
-\noindent{}As before, we must first justify that the cases shown in Table~\ref{table:case1.i.-} represent all possibilities if $G_n$ is left-orderable.
-
-\subsubsection{Proof that $ca^{-1}\neq{}1$, $da^{-1}\neq{}1$, and $cb^{-1}\neq{}1$ in \Case{1}{1}{}}
-
-\noindent{}Note: unless otherwise stated, all lemmas in this section assume $G_n$ is left-orderable and assume signs as in \Case{1}{1}{}.
-
-\begin{lemma} If $ca^{-1}=1$, then $d^{-1}c>1$.
-\label{lemma:id:cA:Dc}
-\end{lemma}
-\begin{proof} Suppose $ca^{-1}=1$. Starting from the third group relation, we have:
-\begin{align*}
-(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
-\Rightarrow{}c^{2}b^{-1}c(c^{-1}d)^{10n+3}&=1\\
-\Rightarrow{}c^{2}b^{-1}d(c^{-1}d)^{10n+2}&=1\\
-\Rightarrow{}c^{2}b^{-1}(aa^{-1})d(c^{-1}d)^{10n+2}&=1\\
-\Rightarrow{}c^{2}(b^{-1}a)(a^{-1}d)(c^{-1}d)^{10n+2}&=1.
-\end{align*}
-This shows that $c^{-1}d<1$ since $b^{-1}a>1$ by assumption, $c>1$ by assumption in Case 1, and $a^{-1}d>1$ by assumption in \Case{1}{1}{}. Therefore, $d^{-1}c>1$.
-\end{proof}
-
-\begin{proposition} If $G_n$ is left-orderable, then $ca^{-1}\neq{}1$ in \Case{1}{1}{}.
-\label{proposition:id:cA}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $ca^{-1}=1$, then:
-\begin{align*}
-(a^{-1}d)(d^{-1}c)=a^{-1}c=1.
-\end{align*}
-This is a contradiction, since $a^{-1}d>1$ by assumption in \Case{1}{1}{}, and $d^{-1}c>1$ by Lemma~\ref{lemma:id:cA:Dc}.
-\end{proof}
-
-We also know that $a^{-1}d\neq{}1$ by Proposition (\ref{proposition:id:Ad}) and $cb^{-1}\neq{}1$ by Proposition (\ref{proposition:id:Bc}).
+\noindent{}As before, Proposition~\ref{proposition:non-trivial} tells us that the cases shown in Table~\ref{table:case1.i.-} represent all possibilities if $G_n$ is left-orderable.
 
 \subsubsection{\Case{1}{1}{2}-\case{1}{1}{7}}
-\noindent{}Now that we have justified the totality of our cases, we continue by disproving left-orderability in each case. We start by showing that if $G_n$ is left-orderable, then \Cases{1}{1}{2}-\case{1}{1}{7} are impossible.
+\noindent{}We continue by disproving left-orderability in each case. We start by showing that if $G_n$ is left-orderable, then \Cases{1}{1}{2}-\case{1}{1}{7} are impossible.
 
 \begin{proposition} If $G_n$ is left-orderable, then \Case{1}{1}{2} is impossible.
 \end{proposition}
@@ -368,12 +158,12 @@ This contradicts (\ref{proposition:case1.i.3:contradiction}).
 \begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $ca^{-1}>1$, $da^{-1}<1$ and $cb^{-1}<1$, then
 \begin{align*}
 [(bc^{-1})(ca^{-1})]^{10n-1}(bc^{-1})(ca^{-1})(ad^{-1})(a)&>1\\
-\Rightarrow{}[(ba^{-1})]^{10n}bd^{-1})&>1\\
-\Rightarrow{}aa^{-1}(ba^{-1})^{10n}d^{-1}a&>1\\
-\Rightarrow{}aa^{-1}b(a^{-1}b)^{10n-1}a^{-1}bd^{-1}a&>1\\
-\Rightarrow{}a(a^{-1}b)^{10n}d^{-1}a>1\\
+\Rightarrow{}[(ba^{-1})]^{10n-1}(bd^{-1}a)&>1\\
+\Rightarrow{}aa^{-1}(ba^{-1})^{10n-1}(bd^{-1}a)&>1\\
+\Rightarrow{}aa^{-1}b(a^{-1}b)^{10n-2}a^{-1}bd^{-1}a&>1\\
+\Rightarrow{}a(a^{-1}b)^{10n}d^{-1}a>1.\\
 \end{align*}
-this contradicts the first group relation, which says $(a^{-1}b)^{10n}d^{-1}a^{2}=1$ or equivalently $a(a^{-1}b)^{10n}d^{-1}a=1$.
+This contradicts the first group relation, which says $(a^{-1}b)^{10n}d^{-1}a^{2}=1$ or equivalently $a(a^{-1}b)^{10n}d^{-1}a=1$.
 \end{proof}
 
 \begin{proposition} If $G_n$ is left-orderable, then \Case{1}{1}{5} is impossible.
@@ -462,8 +252,8 @@ Now consider:
 \end{align}
 where the last inequality follows from Lemma~\ref{lemma:inEq7}. By (\ref{case1.i:inEq:Dc}) and Lemma~\ref{case1.i.1:inEq:BcDb} we see that $(d^{-1}c)(b^{-1}cd^{-1}b)>1$, therefore (\ref{lemma:DCdd:contradiction}) shows that:
 \begin{align*}
-d^{-2}cd<1\\
-\Rightarrow{}d^{-1}c^{-1}d^{2}>1.\qedhere
+d^{-2}cd&<1\\
+\Rightarrow{}d^{-1}c^{-1}d^{2}&>1.\qedhere
 \end{align*}
 \end{proof}
 
@@ -563,8 +353,8 @@ d^{-1}c&<1\\
 \end{align}
 but $d^{-1}a>1$ in \Case{1}{8}{} and $a>1$ in Case 1, so (\ref{lemma:inEq:aB:contradiction}) shows that:
 \begin{align*}
-ba^{-1}<1\\
-\Rightarrow{}ab^{-1}>1.\qedhere
+ba^{-1}&<1\\
+\Rightarrow{}ab^{-1}&>1.\qedhere
 \end{align*}
 \end{proof}
 
@@ -701,7 +491,7 @@ If $G_{n}$ is left-orderable then \Case{1}{8}{} ($d^{-1}a > 1$, $d^{-1}b>1$, and
 \Rightarrow{}c(c^{-1}ba^{-1}d)(d^{-1}b)(d^{-1}ad^{-1})(da^{-1}bc^{-1})\nonumber{}\\
 (cb^{-1}ac^{-1})(cba^{-1}c^{-1})^{10n-1}(cba^{-1})&=1.\label{proposition:case1.viii:contradiction}
 \end{align}
-We know that $c^{-1}ba^{-1}d>1$ by Lemma~\ref{lemma:inEq:CbAd}; we know that $d^{-1}ad^{-1}>1$ in \Case{1}{8}{} by Lemma~\ref{lemma:inEq:DaD}; we know that $da^{-1}bc^{-1}>1$ in \Case{1}{8}{} by Lemma~\ref{lemma:inEq:dAbC}; we know that $cb^{-1}ac^{-1}>1$ in \Case{1}{8}{} by Lemma~\ref{lemma:inEq:cBaC}; we know that $cba^{-1}c^{-1}>1$ in \Case{1}{8}{} by Lemma~\ref{lemma:inEq:cbAC}; we know that $cba^{-1}>1$ in \Case{1}{8}{} by Lemma~\ref{lemma:inEq:cbA}; and we know that $c>1$ in \Case{1}{8}{} by assumption. Therefore (\ref{proposition:case1.viii:contradiction}) shows that if $G_n$ is left-orderable, then \Case{1}{8}{} is not possible.
+We know that $c^{-1}ba^{-1}d$, $d^{-1}ad^{-1}$, $da^{-1}bc^{-1}$, $cb^{-1}ac^{-1}$, $cba^{-1}c^{-1}$, and  $cba^{-1}$ are all positive in \Case{1}{8}{} by Lemmas~\ref{lemma:inEq:CbAd}, \ref{lemma:inEq:DaD}, \ref{lemma:inEq:dAbC}, \ref{lemma:inEq:cBaC}, \ref{lemma:inEq:cbAC}, and \ref{lemma:inEq:cbA} respectively. Also, $c$ is positive in \Case{1}{8}{} by assumption. Therefore (\ref{proposition:case1.viii:contradiction}) shows that if $G_n$ is left-orderable, then \Case{1}{8}{} is not possible.
 \end{proof}
 
     %end{case1.viii}

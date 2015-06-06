@@ -1,6 +1,6 @@
 \input{body/G_0.tex}
 
-\section{Non-triviality of the four generators and $b^{-1}a$}
+\section{Non-triviality and distinctness of the four generators}
 \label{section:identityProofs}
 
 \noindent{}Recall that
@@ -12,165 +12,41 @@ for integers $n\geq{}0$.
 
 \vspace{10pt}
 
-\noindent{}We will assume $G_n$ is left-orderable and then reach a contradiction. By Fact~\ref{fact:WLOG}, we can assume without loss of generality that $b^{-1}a\geq1$.
-
 \begin{proposition}
-If $G_n$ is left-orderable, then $b^{-1}a\neq1$.
-\label{proposition:id:Ba}
+The four generators of $G_n$ are all distinct and non-trivial.
+\label{proposition:non-trivial}
 \end{proposition}
 \begin{proof}
-Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $b^{-1}a=1$. By the first group relation:
-\begin{align}
-(a^{-1}b)^{10n}d^{-1}a^{2} & =1\nonumber\\
-\Rightarrow{}(b^{-1}a)^{-10n}d^{-1}a^{2} & =1\nonumber\\
-\Rightarrow{} d^{-1}a^{2} & =1\nonumber\\
-\Rightarrow{} d & =a^{2}.\nonumber
-\end{align}
-Similarly, by the second group relation:
-\begin{align}
-b^{-2}c(b^{-1}a)^{10n} & =1\nonumber\\
-\Rightarrow b^{-2}c & =1\nonumber\\
-\Rightarrow c & =b^{2}.\nonumber
-\end{align}
-We know $b^{-1}a=1$, which implies $a=b$. Combining these results, we find
-\begin{align}
-c & =b^{2}\nonumber\\
- & =a^{2}\nonumber\\
- & =d.\nonumber
-\end{align}
-We now apply our recently obtained equalities $b=a$, $c=a^{2}$, and $d=a^{2}$ to the definition of $G_{n}$ to get:
-\begin{align}
-G_{n}= & \langle a,a,a^{2},a^{2}\mid{}(a^{-1}[a])^{10n}[a^{2}]^{-1}a^{2},\;[a]^{-2}[a^{2}]([a]^{-1}a)^{10n},\nonumber\\
- & ([a^{2}]^{-1}[a^{2}])^{10n+3}[a^{2}]^{-1}[a][a^{2}]^{-2},\;[a^{2}]^{2}a^{-1}[a^{2}]([a^{2}]^{-1}[a^{2}])^{10n+3}\rangle\nonumber\\
-= & \langle a\mid{}1,\;1,\; a^{-5},\; a^{5}\rangle\nonumber\\
-\cong & \mathbb{Z}/5\mathbb{Z}\nonumber
-\end{align}
-which is a nontrivial finite group and thus not left-orderable. This is a contradiction, therefore $b^{-1}a\neq{}1$.
+Greene and Watson \cite[Section 4.2]{GreeneWatson} show that the abelianization of $G_n$ provides a homomorphism:
+\begin{align*}
+\phi:G_n\rightarrow \mathbb{Z}_{25}
+\end{align*}
+with $\phi(a)=13$, $\phi(b)=3$, $\phi(c)=6$, and $\phi(d)=1$. Because each of the generators maps to a distinct, non-identity element of $\mathbb{Z}_{25}$, it follows that the four generators are distinct and nontrivial.
 \end{proof}
 
-\noindent{}Because of Proposition~\ref{proposition:id:Ba}, we can assume (without loss of generality) that $b^{-1}a>1$. We will now show that if $G_n$ is left-orderable, then all of the generators of $G_n$ are non-trivial.
-
-\begin{proposition}
-If $G_n$ is left-orderable, then $c\neq d$.
-\label{proposition:id:Dc}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $c=d$. By the third group relation:
-\begin{align}
-(d^{-1}c)^{10n+3}c^{-1}bc^{-2} & =1\nonumber\\
-\Rightarrow(c^{-1}c)^{10n+3}c^{-1}bc^{-2} & =1\nonumber\\
-\Rightarrow b & =c^{3}.\nonumber
-\end{align}
-Similarly, by the fourth group relation:
-\begin{align}
-d^{2}a^{-1}d(c^{-1}d)^{10n+3} & =1\nonumber\\
-\Rightarrow c^{2}a^{-1}c(c^{-1}c)^{10n+3} & =1\nonumber\\
-\Rightarrow a & =c^{3}.\nonumber
-\end{align}
-Combining these results, we get that $a=b$, or equivalently $b^{-1}a=1$,
-but we know from Proposition~\ref{proposition:id:Ba} that $b^{-1}a\neq1$. This is a contradiction, therefore $c\neq{}d$.
-\end{proof}
-
-\begin{proposition}
-If $G_n$ is left-orderable, then $a\neq1$.
-\label{proposition:id:a}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $a=1$. By the first group relation:
-\begin{align}
-([1]^{-1}b)^{10n}d^{-1}[1]^{2} & =1\nonumber\\
-\Rightarrow b^{10n}d^{-1} & =1\nonumber\\
-\Rightarrow d & =b^{10n},\label{proposition:id:a:1}
-\end{align}
-and by the second group relation:
-\begin{align}
-b^{-2}c(b^{-1}[1])^{10n} & =1\nonumber\\
-\Rightarrow b^{-2}cb^{-10n} & =1\nonumber\\
-\Rightarrow c & =b^{10n+2}.\label{proposition:id:a:2}
-\end{align}
-Using (\ref{proposition:id:a:1}) and (\ref{proposition:id:a:2}), we substitute for $c$ and $d$ in the third group relation:
-\begin{align}
-([b^{10n}]^{-1}[b^{10n+2}])^{10n+3}[b^{10n+2}]^{-1}b[b^{10n+2}]^{-2} & =1\nonumber\\
-\Rightarrow(b^{2})^{10n+3}b^{-10n-2}bb^{-20n-4} & =1\nonumber\\
-\Rightarrow b^{1-10n} & =1.\nonumber
-\end{align}
-Which means that $b$ has finite order. Furthermore, we know $b\neq1$
-because $a=1$ and $b^{-1}a\neq1$ by Proposition~\ref{proposition:id:Ba}, so $G_{n}$ has torsion for any $n$ and is therefore not left-orderable by Fact~\ref{fact:torsion}. This is a contradiction, therefore $a\neq{}1$.
-\end{proof}
-
-\begin{proposition}
-If $G_n$ is left-orderable, then $b\neq1$.
-\label{proposition:id:b}
-\end{proposition}
+\begin{corollary}
+Both $bc^{-3}$ and $ad^{-3}$ are non-trivial.
+\label{corollary:non-trivial2}
+\end{corollary}
 \begin{proof}
-Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $b=1$. By the first group relation:
-\begin{align}
-(a{}^{-1}[1])^{10n}d^{-1}a^{2} & =1\nonumber\\
-\Rightarrow a^{-10n}d^{-1}a^{2} & =1\nonumber\\
-\Rightarrow d & =a^{-10n+2},\label{proposition:id:b:1}
-\end{align}
-and by the second group relation:
-\begin{align}
-[1]^{-2}c([1]^{-1}a)^{10n} & =1\nonumber\\
-\Rightarrow ca^{10n} & =1\nonumber\\
-\Rightarrow c & =a^{-10n}.\label{proposition:id:b:2}
-\end{align}
-Using (\ref{proposition:id:b:1}) and (\ref{proposition:id:b:2}), we substitute for $c$ and $d$ in the third group relation:
-\begin{align}
-([a^{-10n+2}]^{-1}[a^{-10n}])^{10n+3}[a^{-10n}]^{-1}[1][a^{-10n}]^{-2} & =1\nonumber\\
-\Rightarrow(a^{-2})^{10n+3}a^{30n} & =1\nonumber\\
-\Rightarrow a^{10n-6} & =1.\nonumber
-\end{align}
-By Proposition~\ref{proposition:id:a}, $a\neq1$, so this shows that $G_{n}$
-has torsion for any choice of $n$. Therefore $G_{n}$ is not left-orderable by Fact~\ref{fact:torsion}. This is a contradiction, therefore $b\neq{}1$.
+By the third group relation, we have:
+\begin{align*}
+(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
+\Rightarrow{}(cd^{-1})^{10n+3}bc^{-3}&=1\\
+\Rightarrow{}bc^{-3}&=(dc^{-1})^{10n+3}.
+\end{align*}
+By Proposition~\ref{proposition:non-trivial}, $dc^{-1}\ne1$, therefore $bc^{-3}\ne1$.\\
+
+\noindent{}By the fourth group relation, we have:
+\begin{align*}
+(d^{-1}c)^{10n+3}d^{-1}ad^{-2}&=1\\
+\Rightarrow{}(cd^{-1})^{10n+3}ad^{-3}&=1\\
+\Rightarrow{}ad^{-3}&=(dc^{-1})^{10n+3}.
+\end{align*}
+By Proposition~\ref{proposition:non-trivial}, $dc^{-1}\ne1$, therefore $ad^{-3}\ne1$.
 \end{proof}
 
-\begin{proposition}
-If $G_n$ is left-orderable, then $c\neq1$.
-\label{proposition:id:c}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $c=1$. By the third group relation, we have:
-\begin{align}
-(d^{-1}[1])^{10n+3}[1]^{-1}b[1]^{-2} & =1\nonumber\\
-\Rightarrow d^{-10n-3}b & =1\nonumber\\
-\Rightarrow b & =d^{10n+3}.\label{proposition:id:c:1}
-\end{align}
-Similarly, by the fourth group relation:
-\begin{align}
-d^{2}a^{-1}d([1]d)^{10n+3} & =1\nonumber\\
-\Rightarrow a^{-1}d^{10n+6} & =1\nonumber\\
-\Rightarrow a & =d^{10n+6}.\label{proposition:id:c:2}
-\end{align}
-Using (\ref{proposition:id:c:1}) and (\ref{proposition:id:c:2}), we substitute for $a$ and $b$ in the first group relation:
-\begin{align}
-([d^{10n+6}]^{-1}[d^{10n+3}])^{10n}d^{-1}[d^{10n+6}]^{2} & =1\nonumber\\
-\Rightarrow(d^{-3})^{10n}d^{20n+11} & =1\nonumber\\
-d^{-10n+11} & =1.\label{proposition:id:c:3}
-\end{align}
-We know that $d\neq1$ since $c=1$ and $c\neq d$ by Proposition~\ref{proposition:id:Dc}. Thus $G_{n}$ has torsion for any $n>1$, and is therefore not left-orderable by Fact~\ref{fact:torsion}. Similarly, if $n=1$ then (\ref{proposition:id:c:3}) implies $d=1$. In both cases there is a contradiction, therefore $c\neq{}1$.
-\end{proof}
-
-%------------------------- d != 1 ------------------------
-\begin{proposition}
-If $G_n$ is left-orderable, then $d\neq1$.
-\label{proposition:id:d}
-\end{proposition}
-\begin{proof} Suppose $G_n$ is left-orderable, and suppose (for contradiction) that $d=1$. By the third group relation, we have:
-\begin{align}
-([1]^{-1}c)^{10n+3}c^{-1}bc^{-2} & =1\nonumber\\
-b & =c^{-10n}.\label{proposition:id:d:1}
-\end{align}
-Similarly, by the fourth group relation:
-\begin{align}
-[1]^{2}a^{-1}[1](c^{-1}[1])^{10n+3} & =1\nonumber\\
-a & =c^{-10n-3}.\label{proposition:id:d:2}
-\end{align}
-Using (\ref{proposition:id:d:1}) and (\ref{proposition:id:d:2}), we substitute for $a$ and $b$ in the first group relation:
-\begin{align}
-([c^{-10n-3}]^{-1}[c^{-10n}])^{10n}[c^{-10n-3}]^{2} & =1\nonumber\\
-(c^{3})^{10n}(c^{-20n-6}) & =1\nonumber\\
-c^{10n-6} & =1.\nonumber
-\end{align}
-By Proposition~\ref{proposition:id:c}, we know that $c\neq1$, so this shows that $G_{n}$ has torsion for any choice of $n$ and is therefore not left-orderable by Fact~\ref{fact:torsion}. This is a contradiction, therefore $d\neq{}1$.
-\end{proof}
+\noindent{}We will assume $G_n$ is left-orderable and then reach a contradiction. By Fact~\ref{fact:WLOG}, we can assume without loss of generality that $b^{-1}a\geq1$. Because of Proposition~\ref{proposition:non-trivial}, we can assume (without loss of generality) that $b^{-1}a>1$.\\
 
 \noindent{}With four (non-trivial) group generators there are 16 possible cases for the signs of each of the generators that must be considered (see Table~\ref{table:casesAll}). We will disprove each of these cases.
 
@@ -273,7 +149,7 @@ d^{2}a^{-1}d&=c^{2}b^{-1}b^{2}a^{-2}d\\
 \end{align*}
 \end{proof}
 
-\begin{lemma} In $G_n$, $ad^{-1}a=bc^{-1}b$
+\begin{lemma} In $G_n$, $ad^{-1}a=bc^{-1}b$.
 \label{lemma:eq16}
 \end{lemma}
 \begin{proof} By the first group relation, we have:

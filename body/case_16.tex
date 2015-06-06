@@ -24,13 +24,10 @@ Case\hspace{10 pt} & $a$\hspace{10 pt} & $b$\hspace{10 pt} & $c$\hspace{10 pt} &
 \begin{proof}
 By (\ref{eq1:2}):
 \begin{align*}
-d^{-1}a^{2}=(b^{-1}a)^{10n}>1,
+d^{-1}a^{2}=(b^{-1}a)^{10n} \\
+\Rightarrow{}d^{-1}a=(b^{-1}a)^{10n}a^{-1}.
 \end{align*}
-and in Case 16, $a^{-1}>1$, so:
-\begin{align*}
-(d^{-1}a^{2})(a^{-1})&>1\\
-\Rightarrow{}d^{-1}a&>1.\qedhere
-\end{align*}
+Thus, $d^{-1}a$ is a product of positive elements.\qedhere
 \end{proof}
 
 \begin{lemma} In Case 16, $c^{-1}b>1$.
@@ -38,14 +35,11 @@ and in Case 16, $a^{-1}>1$, so:
 \end{lemma}
 \begin{proof}
 By (\ref{eq2:2}):
-\begin{align}
-c^{-1}b^{2}=(b^{-1}a)^{10n}>1,\label{inEq2}
-\end{align}
-and in Case 16, $b^{-1}>1$, so:
 \begin{align*}
-(c^{-1}b^{2})(b^{-1})&>1\\
-\Rightarrow{}c^{-1}b&>1.\qedhere
+c^{-1}b^{2}=(b^{-1}a)^{10n}\\
+\Rightarrow{}c^{-1}b=(b^{-1}a)^{10n}b^{-1}.
 \end{align*}
+Thus, $c^{-1}b$ is a product of positive elements.
 \end{proof}
 
 \begin{lemma} In Case 16, $c^{-1}d>1$.
@@ -56,12 +50,12 @@ and in Case 16, $b^{-1}>1$, so:
 (d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\nonumber{}\\
 \Rightarrow{}(d^{-1}c)^{10n+3}&=c^{2}b^{-1}c.\label{lemma:case16:Cd:contradiction}
 \end{align}
-Since we are assuming $d^{-1}c>1$, (\ref{lemma:case16:Cd:contradiction}) shows that $c^{2}b^{-1}c>1$. By (\ref{inEq2}), $c^{-1}b^{2}>1$, thus:
+Since we are assuming $d^{-1}c>1$, (\ref{lemma:case16:Cd:contradiction}) shows that $c^{2}b^{-1}c>1$. By (\ref{eq2:2}), $c^{-1}b^{2}=(b^{-1}a)^{10n}>1$, thus:
 \begin{align*}
 (c^{2}b^{-1}c)(c^{-1}b^{2})>1\\
 \Rightarrow{}c^{2}b>1.
 \end{align*}
-This is a contradiction, since both $b$ and $c$ and negative in Case 16. Therefore, $c^{-1}d\geq{}1$. However, by Proposition~\ref{proposition:id:Dc}, $c\neq{}d$ and thus $c^{-1}d\neq{}1$. Therefore, $c^{-1}d>1$.
+This is a contradiction, since both $b$ and $c$ are negative in Case 16. Therefore, $c^{-1}d\geq{}1$. However, by Proposition~\ref{proposition:non-trivial}, $c\neq{}d$ and thus $c^{-1}d\neq{}1$. Therefore, $c^{-1}d>1$.
 \end{proof}
 
 \begin{corollary} In Case 16, $c^{-1}a>1$.
@@ -99,13 +93,13 @@ ba^{-1}&>1.\qedhere
 
 \subsection{Concordance of signs of a few useful elements}
 
-Next we will show that in Case 16, $bc^{-1}$, $dc^{-1}$, $ad^{-1}$, $ac^{-1}$, $ad^{-3}$, and $bc^{-3}$ must all have the same sign. We begin by showing that all of these elements are non-trivial.
+Next we will show that in Case 16, $bc^{-1}$, $dc^{-1}$, $ad^{-1}$, $ac^{-1}$, $bc^{-3}$, and $ad^{-3}$ must all have the same sign. We begin by showing that all of these elements are non-trivial.
 
 \begin{proposition}
-In Case 16, $bc^{-1}\neq1$, $dc^{-1}\neq1$, $ad^{-1}\neq1$, $ac^{-1}\neq1$, $ac^{-1}\neq1$, and $bc^{-3}\neq1$.
+In Case 16, $bc^{-1}\neq1$, $dc^{-1}\neq1$, $ad^{-1}\neq1$, $ac^{-1}\neq1$, $bc^{-3}\neq1$, and $ad^{-3}\neq1$.
 \end{proposition}
 \begin{proof}
-Consequence of Lemma~\ref{lemma:case16:Cb}, Lemma~\ref{lemma:case16:Cd},  Lemma~\ref{lemma:case16:Da}, and Lemma~\ref{lemma:case16:Ca}.
+Consequence of Proposition~\ref{proposition:non-trivial} and Corollary~\ref{corollary:non-trivial2}.
 \end{proof}
 
 \noindent{}Now that we know that each of these elements can only be positive or negative, we proceed to show that they all have the same sign.
@@ -519,7 +513,7 @@ b^{-1}c^{-2}d^{2}a &= 1\nonumber{}\\
 \Rightarrow{}b^{-1}b^{-1}(aa^{-1})bc^{-2}d(cc^{-1})d(cc^{-1})a &= 1\nonumber{}\\
 \Rightarrow{}(b^{-1})(b^{-1}a)(a^{-1}bc^{-1})(c^{-1}dc)(c^{-1}dc)(c^{-1}a) &=1.\label{lemma:case16:CDc:contradiction}
 \end{align}
-Now $b^{-1}>1$ and $b^{-1}a>1$ by genera assumption, $a^{-1}bc^{-1}>1$ in \Case{16}{2}{} by Corollary~\ref{corollary:case16:AbC}, and $c^{-1}a>1$ in Case 16 by Corollary~\ref{lemma:case16:Ca}. Therefore, (\ref{lemma:case16:CDc:contradiction}) shows that
+Now $b^{-1}>1$ and $b^{-1}a>1$ by general assumption, $a^{-1}bc^{-1}>1$ in \Case{16}{2}{} by Corollary~\ref{corollary:case16:AbC}, and $c^{-1}a>1$ in Case 16 by Corollary~\ref{lemma:case16:Ca}. Therefore, (\ref{lemma:case16:CDc:contradiction}) shows that
 \begin{align*}
 c^{-1}dc&<1\\
 \Rightarrow{}c^{-1}d^{-1}c&>1.\qedhere
