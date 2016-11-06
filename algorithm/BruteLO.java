@@ -134,15 +134,24 @@ class BruteLO{
 		// USER INPUT FOR COMBINATION OF POSCONES
 		Scanner console = new Scanner(System.in);
 		String[] posConeCases = new String[10];
+		while(true) {
 		int i=0;
 		while(true) {
-			System.out.println("Enter each case to test on a new line (press ENTER twice to end input):");
+			System.out.println("Enter each case to test on a new line (press ENTER twice to end input, or enter x to cancel the current input):");
 			String searchString = console.nextLine();
 			if(searchString.equals("")) {
 				break;
 			}
+			if(searchString.equals("x") || searchString.equals("X")) {
+				i=-1;
+				break;
+			}
 			posConeCases[i] = searchString;
 			i++;
+		}
+		if(i==-1) {
+			System.out.println("----Input canceled----");
+			continue;
 		}
 		int twoToTheI = (1<<i);
 		boolean[] contraList = new boolean[twoToTheI];
@@ -166,7 +175,7 @@ class BruteLO{
 			System.out.println((contraList[j])?"X":"?");
 		}
 		System.out.println("------------------------");
-		
+		}
 		
 		
 		/* // USER INPUT FOR IDENTITIES
