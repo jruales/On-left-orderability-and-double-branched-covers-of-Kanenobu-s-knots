@@ -10,6 +10,10 @@ B
 C
 D
 
+BBaa
+aaBB
+aaBA
+
 aC
 aD
 bA
