@@ -1,0 +1,63 @@
+// 1*
+bAbAbAbAbAbAbAbAbAbDa
+// 2*
+BcBaBaBaBaBaBaBaBaBaBaB
+// 3*
+//DcDcDcDcDcDcDcDcDcDcDcDcDcCbCC
+DcDcDcDcDcDcDcDcDcDcDcDcDbCC
+// 4*
+AdCdCdCdCdCdCdCdCdCdCdCdCdCddd
+// 5
+BBcDaa
+// 6
+cDaaBB
+// 7
+DaDDccBc
+// 8
+BCCdda
+// 9
+DDDcccBa
+// 10
+bDaaBaBBcA
+// 11
+CbbAbAAdBa
+// 12
+DcccBaaBCC
+// 13
+DcccBdCbCC
+// 14
+
+// 15
+
+// 16
+AdAbCb
+
+// 17
+BaBaBaBaBaBaBaBaBaBabAbAbAbAbAbAbAbAbAbAdCdCdCdCdCdCdCdCdCdCdCdCdCDcDcDcDcDcDcDcDcDcDcDcDcDc
+
+// 18
+aDDccBcD
+
+// 19
+BcDadAbC
+
+// 20
+dCdCdCdCdCdCdCdCdCdCdCdCdCdddA
+
+// 21
+dCbAdCcAbD
+
+//
+//
+AbDaaBaAAd
+BaBBcAbCbb
+DcCbCCCdccBc
+CdddAdDcDaDD
+//
+//
+
+
+
+// #?
+// [bb(Ab)10] [bb(Ab)10] b = dda
+//bbAbAbAbAbAbAbAbAbAbAbbbAbAbAbAbAbAbAbAbAbAbbADD

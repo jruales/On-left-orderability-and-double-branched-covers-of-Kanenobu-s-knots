@@ -1,0 +1,207 @@
+// 1*
+Ba
+// 2
+Cbb
+// 3
+Daa
+// 4?
+CbCCdda
+// 5
+CCCddd
+// 6
+AbDaaBa
+// 7
+BdCbCCdd
+// 8
+CbAd
+
+
+
+
+//Case 16
+
+A
+B
+C
+D
+
+//inconclusive
+//cA
+//dA
+//cB
+//cD
+//Bd
+//dB
+//
+
+Ca
+Da
+Cb
+Cd
+bA
+cBaD
+
+
+
+AdA
+AdB
+AdC
+AbD
+BcB
+AbA
+CCdd
+Cbb
+DDDc
+DbCC
+BcD
+
+AbCCCa
+
+
+//Test
+/*
+bC
+dC
+aD
+aC
+aaBB
+// ???
+bD
+DDc
+bCCC
+aDDD
+Bd
+*/
+
+
+
+cB
+cD
+dA
+cA
+bbAA
+dddA
+cccB
+// dB inconclusive
+// Db inconclusive
+
+
+
+
+//?
+
+//aaa
+
+
+/*
+Case 1 [++++]
+a
+b
+c
+d
+
+//Cd=>bD
+
+// no info
+// bA
+// Ac
+// cA
+// dA
+// Ad
+// cB
+// Bc
+// Bd
+// dB
+// Dc
+// cD
+*/
+
+
+
+/*Case 4 [++--]
+a
+b
+C
+D
+
+aB
+Dc
+*/
+/*
+aB
+aC
+Ca
+aD
+Da
+bC
+Cb
+bD
+Db
+Cd
+dC
+aaBB
+CCdd
+*/
+
+
+
+/*
+bC
+Cb
+DDcc
+*/
+
+
+// Case 3
+/*
+a
+b
+C
+d
+*/
+
+/*
+Cb
+aB
+dC
+Cd
+aC
+Ca
+aD
+Da
+bD
+Db
+bADD
+bbADD
+aAA
+AaA
+AAa
+aBB
+BaB
+CCd
+*/
+//DDcc
+//CCdd
+// Case 8
+/*
+a
+B
+C
+D
+bC
+Cb
+aB
+dC
+Cd
+ADDD
+aC
+aaBB
+Da
+Ca
+aB
+aD
+CbA
+// contradiction
+DDcc
+//CCdd
+*/
