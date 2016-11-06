@@ -17,7 +17,10 @@ class BruteLO {
 	
 	public static int casenum = 0;
 	public static void main(String[] args) throws java.io.FileNotFoundException{
+		// "user", "pairwise", "brute", "none"
+		String inputType = "pairwise";
 		visited = new boolean[100][300][30];
+		
 		conjugates.add("");
 		bruteList = new ArrayList<String>();
 		bruteList.add("");
@@ -143,8 +146,15 @@ class BruteLO {
 			inconclusiveList.add(thisMissingCase);
 		}
 //
-		// "user", "pairwise", "brute"
-		String inputType = "brute";
+		
+		
+		if(inputType.equals("none")) {
+			return;
+		}
+		
+		String startElementI = "AAb";
+		String startElementJ = "BAb";
+		boolean started = false;
 		
 		if(inputType.equals("pairwise")) {
 			String[] posConeCases = new String[2];
@@ -154,6 +164,11 @@ class BruteLO {
 			int N = ((missingCases.size()-1)*missingCases.size())/2;
 			for(int i=0/*missingCases.size()/3*/; i<missingCases.size(); i++) {
 				for(int j=i+1; j<missingCases.size(); j++) {
+					if(!started && (!missingCases.get(i).equals(startElementI) || !missingCases.get(j).equals(startElementJ))) {
+						totalCount++;
+						continue;
+					}
+					started = true;
 					
 					posConeCases[0] = missingCases.get(i);
 					posConeCases[1] = missingCases.get(j);
@@ -382,8 +397,8 @@ class BruteLO {
 			}
 			String conjugatedString = conjugate(cyclicString, conjugates.get(k));
 			//tried = new boolean[cyclicString.length()][posCone.size()];
+			clearVisitedArray();
 			for(int j=0; j<posCone.size(); j++){
-				clearVisitedArray();
 				if(isPositive(conjugatedString, 0, j, 0)) {
 					return true;
 				}
@@ -456,8 +471,8 @@ class BruteLO {
 	public static boolean theresAConetradiction() {
 		for(String item:posCone) {
 			String negativeItem = invert(item);
+			clearVisitedArray();
 			for(int j=0; j<posCone.size(); j++){
-				clearVisitedArray();
 				if(isPositive(negativeItem, 0, j, 0)) {
 					return true;
 				}
@@ -622,8 +637,8 @@ class BruteLO {
 	}
 	public static boolean bruteAddToPosCone(String element) {
 		boolean elementIsPositive = false;
+		clearVisitedArray();
 		for(int j=0; j<posCone.size(); j++){
-			clearVisitedArray();
 			if(isPositive(element, 0, j, 0)) {
 				elementIsPositive = true;
 				break;
@@ -648,16 +663,16 @@ class BruteLO {
 				}
 			}
 			boolean elementIsPositive = false;
+			clearVisitedArray();
 			for(int j=0; j<posCone.size(); j++){
-				clearVisitedArray();
 				if(isPositive(returnable, 0, j, 0)) {
 					elementIsPositive = true;
 					break;
 				}
 			}
 			boolean reverseElementIsPositive = false;
+			clearVisitedArray();
 			for(int j=0; j<posCone.size(); j++){
-				clearVisitedArray();
 				if(isPositive(inverseReturnable, 0, j, 0)) {
 					reverseElementIsPositive = true;
 					break;
