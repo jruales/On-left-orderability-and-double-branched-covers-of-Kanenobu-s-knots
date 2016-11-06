@@ -140,10 +140,11 @@ class BruteLO {
 				continue;
 			}
 			missingCases.add(thisMissingCase);
+			inconclusiveList.add(thisMissingCase);
 		}
 //
 		// "user", "pairwise", "brute"
-		String inputType = "pairwise";
+		String inputType = "brute";
 		
 		if(inputType.equals("pairwise")) {
 			String[] posConeCases = new String[2];
@@ -294,8 +295,8 @@ class BruteLO {
 		if(inputType.equals("brute")) {
 		// BRUTE INPUT FOR POSCONES
 		enlargeBruteList();
-		enlargeBruteList();
-		enlargeBruteList();
+		//enlargeBruteList();
+		//enlargeBruteList();
 		//enlargeBruteList();
 		//enlargeBruteList();
 		while(true) {
