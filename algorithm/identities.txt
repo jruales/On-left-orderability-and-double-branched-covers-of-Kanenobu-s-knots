@@ -22,7 +22,7 @@ AdCdCdCdCdCdCdCdCdCdCdCdCdCddd
 // 5
 BBcDaa
 // 6
-cDaaBB
+//cDaaBB
 // 7
 DaDDccBc
 // 8
@@ -69,8 +69,8 @@ DcCbCCCdccBc
 CdddAdDcDaDD
 //
 //
-*/
 
+*/
 
 // #?
 // [bb(Ab)10] [bb(Ab)10] b = dda

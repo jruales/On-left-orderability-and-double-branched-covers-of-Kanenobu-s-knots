@@ -1,11 +1,12 @@
 import java.util.*;
 import java.io.*;
-class BruteLO{
+class BruteLO {
 	public static ArrayList<String> positiveClauses;
 	static ArrayList<String> posCone = new ArrayList<String>();// = {"a", "b", "aBBa", "bAAb"};
 	//static String[] posCone;
 	static boolean checkConjugates = false;
 	static ArrayList<String> identities = new ArrayList<String>();
+	static ArrayList<String> missingCases = new ArrayList<String>();
 	static ArrayList<String> conjugates = new ArrayList<String>();
 	static ArrayList<String> conjugInfo = new ArrayList<String>();
 	static HashMap<String, ArrayList<Character>> conjugOptions = new HashMap<String, ArrayList<Character>>();
@@ -16,7 +17,7 @@ class BruteLO{
 	
 	public static int casenum = 0;
 	public static void main(String[] args) throws java.io.FileNotFoundException{
-		visited = new boolean[100][200][30];
+		visited = new boolean[100][300][30];
 		conjugates.add("");
 		bruteList = new ArrayList<String>();
 		bruteList.add("");
@@ -131,6 +132,80 @@ class BruteLO{
 				return;
 			}
 		}
+		//Import missing cases into ArrayList<String> missingCases
+		Scanner missingCaseScanner = new Scanner(new File("missingCases.txt"));
+		while(missingCaseScanner.hasNextLine()) {
+			String thisMissingCase = missingCaseScanner.nextLine();
+			if(thisMissingCase.equals("")) {
+				continue;
+			}
+			missingCases.add(thisMissingCase);
+		}
+//
+		// "user", "pairwise", "brute"
+		String inputType = "pairwise";
+		
+		if(inputType.equals("pairwise")) {
+			String[] posConeCases = new String[2];
+			boolean[] contraList = new boolean[4];
+			System.out.println(missingCases.size());
+			int totalCount = 0;
+			int N = ((missingCases.size()-1)*missingCases.size())/2;
+			for(int i=0/*missingCases.size()/3*/; i<missingCases.size(); i++) {
+				for(int j=i+1; j<missingCases.size(); j++) {
+					
+					posConeCases[0] = missingCases.get(i);
+					posConeCases[1] = missingCases.get(j);
+					System.out.println();
+					System.out.println(((double)(totalCount++)*100/N)+"%");
+					System.out.println("Now checking "+posConeCases[0]+" "+posConeCases[1]);
+					contraList[0] = anyContradiction(posConeCases);
+					String[] actualPosConeCases = new String[2];
+					actualPosConeCases[0] = posConeCases[0];
+					actualPosConeCases[1] = invert(posConeCases[1]);
+					contraList[1] = anyContradiction(actualPosConeCases);
+					actualPosConeCases[0] = invert(posConeCases[0]);
+					actualPosConeCases[1] = posConeCases[1];
+					contraList[2] = anyContradiction(actualPosConeCases);
+					actualPosConeCases[0] = invert(posConeCases[0]);
+					actualPosConeCases[1] = invert(posConeCases[1]);
+					contraList[3] = anyContradiction(actualPosConeCases);
+					String thisWaffle = waffle(contraList);
+					if(waffleSum(thisWaffle, 'X')==0) {
+						//No evidence
+						continue;
+					} else if(thisWaffle.equals("XXXX")) {
+						System.out.println("GENERAL CONTRADICTION: "+posConeCases[0] + " " + posConeCases[1]);
+						return;
+					} else {
+						System.out.println(posConeCases[0] + "\t" + posConeCases[1] + "\t" + thisWaffle);
+						System.err.println(posConeCases[0] + "\t" + posConeCases[1] + "\t" + thisWaffle);
+					}
+					/*
+					else if(waffleSum(thisWaffle, 'X')==1) {
+						//One evidence
+					} else if(thisWaffle.equals("??XX")) {
+						//A is positive
+					} else if(thisWaffle.equals("XX??")) {
+						//A is negative
+					} else if(thisWaffle.equals("?X?X")) {
+						//B is positive
+					} else if(thisWaffle.equals("X?X?")) {
+						//B is negative
+					} else if(thisWaffle.equals("?XX?")) {
+						//A is positive iff B is positive
+					} else if(thisWaffle.equals("X??X")) {
+						//A is positive iff B is negative
+					} else if(thisWaffle.equals("XXXX")) {
+						System.out.println("GENERAL CONTRADICTION");
+						return;
+					}
+					*/
+				}
+			}
+		}
+		
+		if(inputType.equals("user")) {
 		// USER INPUT FOR COMBINATION OF POSCONES
 		Scanner console = new Scanner(System.in);
 		String[] posConeCases = new String[10];
@@ -176,6 +251,7 @@ class BruteLO{
 		}
 		System.out.println("------------------------");
 		}
+		}
 		
 		
 		/* // USER INPUT FOR IDENTITIES
@@ -215,11 +291,11 @@ class BruteLO{
 		}
 		*/
 		
-		/*
+		if(inputType.equals("brute")) {
 		// BRUTE INPUT FOR POSCONES
 		enlargeBruteList();
-		//enlargeBruteList();
-		//enlargeBruteList();
+		enlargeBruteList();
+		enlargeBruteList();
 		//enlargeBruteList();
 		//enlargeBruteList();
 		while(true) {
@@ -254,10 +330,27 @@ class BruteLO{
 				return;
 			}
 		}
-		*/
+		}
 		
 		
 		
+		
+	}
+	public static String waffle(boolean[] ingredients) {
+		String wafflePerSe = "";
+		for(boolean ingredient:ingredients) {
+			wafflePerSe += ingredient?"X":"?";
+		}
+		return wafflePerSe;
+	}
+	public static int waffleSum(String thisWaffle, char thisIngredient) {
+		int waffleSumPerSe = 0;
+		for(int wafflizer = 0; wafflizer<thisWaffle.length(); wafflizer++) {
+			if(thisWaffle.charAt(wafflizer)==thisIngredient) {
+				waffleSumPerSe++;
+			}
+		}
+		return waffleSumPerSe;
 	}
 	//returns +1 if positive, -1 if negative, 0 if unknown
 	public static int stringSign(String searchString) {
