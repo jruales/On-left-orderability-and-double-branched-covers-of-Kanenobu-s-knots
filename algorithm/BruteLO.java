@@ -131,6 +131,43 @@ class BruteLO{
 				return;
 			}
 		}
+		// USER INPUT FOR COMBINATION OF POSCONES
+		Scanner console = new Scanner(System.in);
+		String[] posConeCases = new String[10];
+		int i=0;
+		while(true) {
+			System.out.println("Enter each case to test on a new line (press ENTER twice to end input):");
+			String searchString = console.nextLine();
+			if(searchString.equals("")) {
+				break;
+			}
+			posConeCases[i] = searchString;
+			i++;
+		}
+		int twoToTheI = (1<<i);
+		boolean[] contraList = new boolean[twoToTheI];
+		String[] actualPosConeCases = new String[i];
+		for(int j=0; j<twoToTheI; j++) {
+			for(int k=0; k<i; k++) {
+				actualPosConeCases[k] = ((j & (1<<(i-1-k)))>0)?invert(posConeCases[k]):posConeCases[k];
+			}
+			contraList[j] = anyContradiction(actualPosConeCases);
+			System.out.println();
+		}
+		System.out.println("--------RESULTS---------");
+		for(int k=0; k<i; k++) {
+			System.out.print(posConeCases[k]+"\t");
+		}
+		System.out.println();
+		for(int j=0; j<twoToTheI; j++) {
+			for(int k=0; k<i; k++) {
+				System.out.print((((j & (1<<(i-1-k)))>0)?"-":"+")+"\t");
+			}
+			System.out.println((contraList[j])?"X":"?");
+		}
+		System.out.println("------------------------");
+		
+		
 		
 		/* // USER INPUT FOR IDENTITIES
 		Scanner console = new Scanner(System.in);
@@ -141,7 +178,7 @@ class BruteLO{
 			System.out.println("String sign: "+stringSign(searchString));
 		}
 		*/
-		
+		/*
 		// USER INPUT FOR POSCONES
 		Scanner console = new Scanner(System.in);
 		while(true) {
@@ -167,7 +204,7 @@ class BruteLO{
 		
 		
 		}
-		
+		*/
 		
 		/*
 		// BRUTE INPUT FOR POSCONES
@@ -341,6 +378,32 @@ class BruteLO{
 			}
 		}
 		posConePop();
+		return false;
+	}
+	public static boolean anyContradiction(String[] searchStrings) {
+		for(String searchString:searchStrings) {
+			posConePush(searchString);
+		}
+		if(theresAConetradiction()) {
+			System.out.println("CoNeTrAdIcTiOn");
+			for(int i=0; i<searchStrings.length; i++) {
+				posConePop();
+			}
+			return true;
+		}
+		for(String thisItem: identities) {
+			int thisSign = stringSign(thisItem);
+			System.out.println(thisSign + "  " + thisItem);
+			if(thisSign!=0) {
+				for(int i=0; i<searchStrings.length; i++) {
+					posConePop();
+				}
+				return true;
+			}
+		}
+		for(int i=0; i<searchStrings.length; i++) {
+			posConePop();
+		}
 		return false;
 	}
 	public static void posConePush(String pushable) {
