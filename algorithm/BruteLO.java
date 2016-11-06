@@ -16,7 +16,7 @@ class BruteLO{
 	
 	public static int casenum = 0;
 	public static void main(String[] args) throws java.io.FileNotFoundException{
-		visited = new boolean[100][100][30];
+		visited = new boolean[250][200][30];
 		conjugates.add("");
 		bruteList = new ArrayList<String>();
 		bruteList.add("");
@@ -132,15 +132,16 @@ class BruteLO{
 			}
 		}
 		
-		/* // USER INPUT FOR IDENTITIES
+		// USER INPUT FOR IDENTITIES
 		Scanner console = new Scanner(System.in);
 		while(true) {
+			System.out.println("Next Thing to Check:");
 			String searchString = console.nextLine();
 			System.out.println();
 			System.out.println(searchString);
 			System.out.println("String sign: "+stringSign(searchString));
 		}
-		*/
+		
 		
 		// USER INPUT FOR POSCONES
 		/*
@@ -169,12 +170,17 @@ class BruteLO{
 			
 		}
 		*/
-		
+		/*
 		// BRUTE INPUT FOR POSCONES
+		enlargeBruteList();
+		enlargeBruteList();
+		enlargeBruteList();
+		enlargeBruteList();
 		enlargeBruteList();
 		while(true) {
 			String searchString = bruteGetNextElement();
 			String invertedSearchString = invert(searchString);
+			System.out.println("Now Checking: "+searchString +" and " + invertedSearchString);
 			
 			Boolean contra1 = anyContradiction(searchString);
 			//System.out.println();
@@ -182,14 +188,16 @@ class BruteLO{
 			if(!contra1 && contra2) {
 				if(bruteAddToPosCone(searchString)) {
 					System.out.println("+ " + searchString+" added to positive cone");
+					System.err.println(searchString);
 				} else {
 					System.out.println("(+) " + searchString+" positive and already a combination of things in the positive cone");
 				}
 			} else if(contra1 && !contra2){
 				if(bruteAddToPosCone(invertedSearchString)) {
 					System.out.println("+ " + invertedSearchString+" added to positive cone");
+					System.err.println(invertedSearchString);
 				} else {
-					System.out.println("(+) " + searchString+" positive and already a combination of things in the positive cone");
+					System.out.println("(+) " + invertedSearchString+" positive and already a combination of things in the positive cone");
 				}
 			} else if(!contra1 && !contra2) {
 				bruteAddToInconclusive(searchString);
@@ -201,7 +209,7 @@ class BruteLO{
 				return;
 			}
 		}
-		
+		*/
 		
 		
 	}
@@ -222,6 +230,7 @@ class BruteLO{
 	/*Checks if a string is positive accounting for all rotations*/
 	public static boolean isPositive(String searchString) {
 		String cyclicString = searchString;
+		//maxPosElementLength = 100000;
 		for(int i=0; i<Math.min(cyclicString.length(), maxPosElementLength); i++) {
 			if(outputMode) {
 				System.out.println(cyclicString);
@@ -472,7 +481,32 @@ class BruteLO{
 					return bruteGetNextElement();
 				}
 			}
-			return returnable;
+			boolean elementIsPositive = false;
+			for(int j=0; j<posCone.size(); j++){
+				clearVisitedArray();
+				if(isPositive(returnable, 0, j, 0)) {
+					elementIsPositive = true;
+					break;
+				}
+			}
+			boolean reverseElementIsPositive = false;
+			for(int j=0; j<posCone.size(); j++){
+				clearVisitedArray();
+				if(isPositive(inverseReturnable, 0, j, 0)) {
+					reverseElementIsPositive = true;
+					break;
+				}
+			}
+			if((elementIsPositive) == (reverseElementIsPositive)) {
+				if(elementIsPositive) {
+					System.out.println("WHOA GENERAL CONTRADICTION!!!!!!!!!"+returnable);
+				}
+				return returnable;
+			} else { //already in the positive cone, skip this element
+				System.out.println();
+				System.out.println("() " + returnable + " or " + inverseReturnable + " already positive, not checking it");
+				return bruteGetNextElement();
+			}
 		} else if(inconclusiveList.size()>0 && !isInconclusiveListStale()) {
 			inconclusiveListCounter++;
 			return inconclusiveList.remove();

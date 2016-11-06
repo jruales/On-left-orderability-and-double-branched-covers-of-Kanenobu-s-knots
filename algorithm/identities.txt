@@ -1,3 +1,15 @@
+//21
+dAdAbCbD
+
+//22
+cBcBaDaC
+
+//23
+dAcBaDaCbA
+
+//24
+AdBcBaDbCb
+
 // 1*
 bAbAbAbAbAbAbAbAbAbDa
 // 2*
@@ -44,8 +56,10 @@ BcDadAbC
 // 20
 dCdCdCdCdCdCdCdCdCdCdCdCdCdddA
 
-// 21
-dCbAdCcAbD
+// 2??
+dCbAdAbD
+
+
 
 //
 //
