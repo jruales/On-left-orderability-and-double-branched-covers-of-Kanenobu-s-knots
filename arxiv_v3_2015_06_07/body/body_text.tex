@@ -1,0 +1,284 @@
+\input{body/G_0.tex}
+
+\section{Non-triviality and distinctness of the four generators}
+\label{section:identityProofs}
+
+\noindent{}Recall that
+\begin{align*}
+G_n=\langle a,\; b,\; c,\; d \mid{} &(a^{-1}b)^{10n}d^{-1}a^{2},\; b^{-2}c(b^{-1}a)^{10n},\\
+&(d^{-1}c)^{10n+3}c^{-1}bc^{-2},\; d^{2}a^{-1}d(c^{-1}d)^{10n+3} \rangle
+\end{align*}
+for integers $n\geq{}0$.
+
+\vspace{10pt}
+
+\begin{proposition}
+The four generators of $G_n$ are all distinct and non-trivial.
+\label{proposition:non-trivial}
+\end{proposition}
+\begin{proof}
+Greene and Watson \cite[Section 4.2]{GreeneWatson} show that the abelianization of $G_n$ provides a homomorphism:
+\begin{align*}
+\phi:G_n\rightarrow \mathbb{Z}_{25}
+\end{align*}
+with $\phi(a)=13$, $\phi(b)=3$, $\phi(c)=6$, and $\phi(d)=1$. Because each of the generators maps to a distinct, non-identity element of $\mathbb{Z}_{25}$, it follows that the four generators are distinct and nontrivial.
+\end{proof}
+
+\begin{corollary}
+Both $bc^{-3}$ and $ad^{-3}$ are non-trivial.
+\label{corollary:non-trivial2}
+\end{corollary}
+\begin{proof}
+By the third group relation, we have:
+\begin{align*}
+(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
+\Rightarrow{}(cd^{-1})^{10n+3}bc^{-3}&=1\\
+\Rightarrow{}bc^{-3}&=(dc^{-1})^{10n+3}.
+\end{align*}
+By Proposition~\ref{proposition:non-trivial}, $dc^{-1}\ne1$, therefore $bc^{-3}\ne1$.\\
+
+\noindent{}By the fourth group relation, we have:
+\begin{align*}
+(d^{-1}c)^{10n+3}d^{-1}ad^{-2}&=1\\
+\Rightarrow{}(cd^{-1})^{10n+3}ad^{-3}&=1\\
+\Rightarrow{}ad^{-3}&=(dc^{-1})^{10n+3}.
+\end{align*}
+By Proposition~\ref{proposition:non-trivial}, $dc^{-1}\ne1$, therefore $ad^{-3}\ne1$.
+\end{proof}
+
+\noindent{}We will assume $G_n$ is left-orderable and then reach a contradiction. By Fact~\ref{fact:WLOG}, we can assume without loss of generality that $b^{-1}a\geq1$. Because of Proposition~\ref{proposition:non-trivial}, we can assume (without loss of generality) that $b^{-1}a>1$.\\
+
+\noindent{}With four (non-trivial) group generators there are 16 possible cases for the signs of each of the generators that must be considered (see Table~\ref{table:casesAll}). We will disprove each of these cases.
+
+
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{l | l | l | l | l}
+Case\hspace{10 pt} & $a$\hspace{10 pt} & $b$\hspace{10 pt} & $c$\hspace{10 pt} & $d$\hspace{10 pt} \\\hline\hline
+1 & $+$ & $+$ & $+$ & $+$ \\\hline
+2 & $+$ & $+$ & $+$ & $-$ \\\hline
+3 & $+$ & $+$ & $-$ & $+$ \\\hline
+4 & $+$ & $+$ & $-$ & $-$ \\\hline
+5 & $+$ & $-$ & $+$ & $+$ \\\hline
+6 & $+$ & $-$ & $+$ & $-$ \\\hline
+7 & $+$ & $-$ & $-$ & $+$ \\\hline
+8 & $+$ & $-$ & $-$ & $-$ \\\hline
+9 & $-$ & $+$ & $+$ & $+$ \\\hline
+10 & $-$ & $+$ & $+$ & $-$ \\\hline
+11 & $-$ & $+$ & $-$ & $+$ \\\hline
+12 & $-$ & $+$ & $-$ & $-$ \\\hline
+13 & $-$ & $-$ & $+$ & $+$ \\\hline
+14 & $-$ & $-$ & $+$ & $-$ \\\hline
+15 & $-$ & $-$ & $-$ & $+$ \\\hline
+16 & $-$ & $-$ & $-$ & $-$ 
+\end{tabular}
+\end{center}
+\caption{The 16 possible cases with 4 generators}
+\label{table:casesAll}
+\end{table}
+
+\section{General Lemmas}
+\label{section:generalLemmas}
+
+\noindent{}First we prove some lemmas that will be used later. These lemmas are true for all cases listed in Table~\ref{table:casesAll}.
+
+\begin{lemma} In $G_n$, $d^{-1}a^{2}=c^{-1}b^{2}$.
+\label{lemma:eq5}
+\end{lemma}
+\begin{proof} The first group relation for $G_n$ can be rearranged as follows:
+\begin{align}
+(a^{-1}b)^{10n}d^{-1}a^{2}&=1\nonumber{}\\
+\Rightarrow{}(b^{-1}a)^{10n}&=d^{-1}a^{2},\label{eq1:2}
+\end{align}
+and the second group relation can be rearranged as follows:
+\begin{align}
+b^{-2}c(b^{-1}a)^{10n}&=1\nonumber{}\\
+\Rightarrow{}(b^{-1}a)^{10n}&=c^{-1}b^{2}.\label{eq2:2}
+\end{align}
+This shows that:
+\begin{align*}
+d^{-1}a^{2}&=c^{-1}b^{2}.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{corollary} In $G_n$, $a^{2}b^{-2}=dc^{-1}$.
+\label{corollary:eq6}
+\end{corollary}
+\begin{proof}By Lemma~\ref{lemma:eq5} we know:
+\begin{align*}
+d^{-1}a^{2}&=c^{-1}b^{2}\\
+\Rightarrow{}a^{2}b^{-2}&=dc^{-1}.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} In $G_n$, $d^{2}a^{-1}d=c^{2}b^{-1}c$.
+\label{lemma:eq7}
+\end{lemma}
+\begin{proof}
+The third group relation for $G_n$ can be rearranged as follows:
+\begin{align*}
+(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\\
+\Rightarrow{}(d^{-1}c)^{10n+3}&=c^{2}b^{-1}c,
+\end{align*}
+and the fourth group relation can be rearranged as follows:
+\begin{align*}
+d^{2}a^{-1}d(c^{-1}d)^{10n+3}&=1\\
+\Rightarrow{}(d^{-1}c)^{10n+3}&=d^{2}a^{-1}d.
+\end{align*}
+Showing that:
+\begin{align}
+\label{eq7}d^{2}a^{-1}d&=c^{2}b^{-1}c.
+\end{align}
+\end{proof}
+
+\begin{lemma} In $G_n$, $d^{2}a=c^{2}b$.
+\label{lemma:eq8}
+\end{lemma}
+\begin{proof}
+Starting from Lemma~\ref{lemma:eq5}, we have:
+\begin{align}
+d^{-1}a^{2}&=c^{-1}b^{2}\nonumber{}\\
+\Rightarrow{}c&=b^{2}a^{-2}d.\label{eq5:2}
+\end{align}
+Using (\ref{eq5:2}), we can substitute for the right-most $c$ in (\ref{eq7}). We find:
+\begin{align*}
+d^{2}a^{-1}d&=c^{2}b^{-1}b^{2}a^{-2}d\\
+\Rightarrow{}d^{2}a^{-1}d&=c^{2}ba^{-2}d\\
+\Rightarrow{}d^{2}a&=c^{2}b.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} In $G_n$, $ad^{-1}a=bc^{-1}b$.
+\label{lemma:eq16}
+\end{lemma}
+\begin{proof} By the first group relation, we have:
+\begin{align}
+(a^{-1}b)^{10n}d^{-1}a^{2}&=1\nonumber{}\\
+\Rightarrow{}(a^{-1})(ba^{-1})^{10n}ad^{-1}a^{2}&=1\nonumber{}\\
+\Rightarrow{}(ba^{-1})^{10n}ad^{-1}a&=1.\label{eq1:3}
+\end{align}
+By the second group relation, we have:
+\begin{align}
+b^{-2}c(b^{-1}a)^{10n}&=1\nonumber{}\\
+\Rightarrow{} b^{-2}cb^{-1}(ab^{-1})^{10n}b&=1\nonumber{}\\
+\Rightarrow{}b^{-1}cb^{-1}(ab^{-1})^{10n}&=1\nonumber{}\\
+\Rightarrow{}b^{-1}cb^{-1}&=(ba^{-1})^{10n}.\label{eq2:3}
+\end{align}
+Substituting (\ref{eq2:3}) into (\ref{eq1:3}), we see:
+\begin{align*}
+b^{-1}cb^{-1}ad^{-1}a&=1\\
+\Rightarrow{}ad^{-1}a&=bc^{-1}b.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} In $G_n$, $c^{-3}d^{3}=b^{-1}a$.
+\label{lemma:eq9}
+\end{lemma}
+\begin{proof} By the third group relation, we have:
+\begin{align}
+(d^{-1}c)^{10n+3}c^{-1}bc^{-2}&=1\nonumber{}\\
+\Rightarrow{}c^{-1}(cd^{-1})^{10n+3}bc^{-2}&=1\nonumber{}\\
+\Rightarrow{}(cd^{-1})^{10n+3}bc^{-3}&=1.\label{eq3:33}
+\end{align}
+By the fourth group relation, we have:
+\begin{align}
+d^{2}a^{-1}d(c^{-1}d)^{10n+3}&=1\nonumber{}\\
+\Rightarrow{}d^{2}a^{-1}(dc^{-1})^{10n+3}d&=1\nonumber{}\\
+\Rightarrow{}d^{3}a^{-1}(dc^{-1})^{10n+3}&=1\nonumber{}\\
+\Rightarrow{}d^{3}a^{-1}&=(cd^{-1})^{10n+3}.\label{eq4:33}
+\end{align}
+Substituting (\ref{eq4:33}) into (\ref{eq3:33}), we see:
+\begin{align*}
+d^{3}a^{-1}bc^{-3}&=1\\
+\Rightarrow{}c^{-3}d^{3}&=b^{-1}a.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{corollary} If $G_n$ is left-orderable, then $c^{-3}d^{3}>1$.
+\label{corollary:inEq5}
+\end{corollary}
+\begin{proof}This is an immediate consequence of Lemma~\ref{lemma:eq9} and the general assumption that $b^{-1}a>1$.
+\end{proof}
+
+\begin{lemma} If $G_n$ is left-orderable, then $d^{-1}a^{2}>1$.
+\label{lemma:inEq3}
+\end{lemma}
+\begin{proof}By (\ref{eq1:2}) we have:
+\begin{align*}
+(b^{-1}a)^{10n}&=d^{-1}a^{2},
+\end{align*}
+and since we are assuming $b^{-1}a>1$, this shows that $d^{-1}a^{2}>1$.
+\end{proof}
+
+\begin{lemma} If $G_n$ is left-orderable, then $d^{-2}c^{2}b^{-1}cd^{-1}b<1$.
+\label{lemma:inEq7}
+\end{lemma}
+\begin{proof} By  Lemma~\ref{lemma:eq7} we have:
+\begin{align}
+d^{2}a^{-1}d&=c^{2}b^{-1}c\nonumber{}\\
+\Rightarrow{}d^{2}&=c^{2}b^{-1}cd^{-1}a.\label{eq7:2}
+\end{align}
+By rearranging the result of Lemma~\ref{lemma:eq9} we have:
+\begin{align*}
+c^{3}=d^{3}a^{-1}b=d(c^{2}b^{-1}cd^{-1}a)a^{-1}b.
+\end{align*}
+Note that the last equality follows by substituting for $d^{2}$ using (\ref{eq7:2}). This expression can be rearranged to give:
+\begin{align}
+d&=c^{3}b^{-1}dc^{-1}bc^{-2}\nonumber{}\\
+\Rightarrow{}c^{-1}d&=c^2b^{-1}dc^{-1}bc^{-2}.\label{eq13}
+\end{align}
+Now (\ref{eq13}) can be rearranged to yield:
+\begin{align}
+d^{-1}c^3b^{-1}dc^{-1}bc^{-2}&=1\nonumber{}\\
+\Rightarrow{}(d^{-3}c^3)(b^{-1}dc^{-1}bc^{-2}d^{2})&=1.\label{lemma:inEq7:contradiction}
+\end{align}
+By Corollary~\ref{corollary:inEq5}, $d^{-3}c^3<1$, therefore (\ref{lemma:inEq7:contradiction}) shows that:
+\begin{align*}
+b^{-1}dc^{-1}bc^{-2}d^{2}&>1\\
+\Rightarrow{}d^{-2}c^{2}b^{-1}cd^{-1}b&<1.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} If $G_n$ is left-orderable, then $c^{-1}ba^{-1}d>1$.
+\label{lemma:inEq:CbAd}
+\end{lemma}
+\begin{proof} By Lemma~\ref{lemma:eq16}, we have:
+\begin{align}
+a^{-1}da^{-1}bc^{-1}b&= 1\nonumber{}\\
+\Rightarrow{}c^{-1}ba^{-1}da^{-1}b &=1\nonumber{}\\
+\Rightarrow{}(b^{-1}a)(d^{-1}ab^{-1}c) &= 1.\label{lemma:inEq:CbAd:contradiction}
+\end{align}
+We know $b^{-1}a>1$, so (\ref{lemma:inEq:CbAd:contradiction}) shows that:
+\begin{align*}
+d^{-1}ab^{-1}c&<1\\
+\Rightarrow{}c^{-1}ba^{-1}d&>1.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} If $G_n$ is left-orderable, then $b<1$ implies $c<1$.
+\label{genImp1}
+\end{lemma}
+\begin{proof}By Lemma~\ref{lemma:inEq3}, $d^{-1}a^{2}>1$, and hence $a^{-2}d<1$. By Lemma~\ref{lemma:eq5}, we have:
+\begin{align*}
+d^{-1}a^{2}&=c^{-1}b^{2}\\
+\Rightarrow{}c&=b^{2}a^{-2}d,
+\end{align*}
+and it is now easy to see that:
+\begin{align*}
+b<1\Rightarrow{}b^{2}<1\Rightarrow{}b^{2}a^{-2}d&<1\Rightarrow{}c<1.\qedhere
+\end{align*}
+\end{proof}
+
+\input{body/cases2-15}
+
+%end{case8}
+%begin{case1}
+
+\input{body/case_1}
+
+\input{body/case_16}
+
+\noindent{}With Proposition~\ref{proposition:case16.B}, we have eliminated the final sub-case of Case 16. We have therefore shown that $G_n$ is not left-orderable.
+
+

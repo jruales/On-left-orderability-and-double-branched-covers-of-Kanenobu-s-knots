@@ -1,0 +1,93 @@
+
+\section{Proof that $G_0$ is not left-orderable}
+\label{section:G_0}
+We start by proving that $G_0$ is not left-orderable, as the proof uses a different approach than the general case $n\geq1$
+\begin{lemma} $G_0$ is isomorphic to $\langle x,\; y\mid{}(x^{-2}y^{2})^{3}=x^{5}=y^{5} \rangle$.
+\end{lemma}
+\begin{proof} When $n=0$, we have:
+\begin{align*}
+G_0=\langle a,\; b,\; c,\; d \mid{} d^{-1}a^{2},\; b^{-2}c,\; (d^{-1}c)^{3}c^{-1}bc^{-2},\; d^{2}a^{-1}d(c^{-1}d)^{3} \rangle.
+\end{align*}
+The first two relations show that $a^{2}=d$ and $b^{2}=c$, thus we can rewrite the presentation using only $a$ and $b$ as generators:
+\begin{align*}
+G_0&=\langle a,\;b\mid{} (a^{-2}b^{2})^{3}b^{-2}bb^{-4},\; a^{4}a^{-1}a^{2}(b^{-2}a^{2})^{3} \rangle\\
+G_0&=\langle a,\;b\mid{} (b^{-2}a^{2})^{3}=b^{-5},\; a^{5}(b^{-2}a^{2})^{3} \rangle\\
+G_0&=\langle a,\;b\mid{} (b^{-2}a^{2})^{3}=b^{-5},\; a^{5}b^{-5} \rangle\\
+G_0&=\langle a,\;b\mid{} (a^{-2}b^{2})^{3}=a^{5}=b^{5} \rangle.\qedhere
+\end{align*}
+\end{proof}
+
+\begin{lemma} Both $x^{5}$ and $y^{5}$ commute with all elements in $G_0$.
+\label{lemma:G_0:center}
+\end{lemma}
+\begin{proof} Since we can change $x^5$ to $y^5$ and back as necessary, it is clear that both $x^5$ and $y^5$ commute with $x$, $y$, $x^{-1}$, and $y^{-1}$ and therefore with any element of $G_0$.
+
+%Let $w\in{}G_0$ be any word. We will show that $wx^{5}=x^{5}w$ and similarly with $y^{5}$. The elements $x$ and $y$ generate $G_0$, so $w$ can be expressed as some word in $x$ and $y$, that is:
+%\begin{align*}
+%w=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N}.
+%\end{align*}
+%Where all $n_i$ are non-zero integers except $n_0$ and $n_N$ which may be zero. Then:
+%\begin{align*}
+%wx^{5}&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N}x^{5}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N+5}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{5}x^{n_N}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}y^{5}x^{n_N}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}+5}x^{n_N}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{5}y^{n_{N-1}}x^{n_N}\hfil\\
+%&=x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}x^{5}y^{n_{N-1}}x^{n_N}\hfil\\
+%\intertext{\center $\vdots{}$}
+%\setbox0\hbox{$\cdots{}$}\mathrel{\makebox[\wd0]{\hfil\vdots\hfil}}\\
+%&\hspace{80pt} \vdots{}\\
+%&=x^{n_0}x^{5}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N}\hfil\\
+%&=x^{n_0+5}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N}\hfil\\
+%&=x^{5}x^{n_0}y^{n_1}x^{n_2}y^{n_3}\cdots{}x^{n_{N-2}}y^{n_{N-1}}x^{n_N}\hfil\\
+%wx^{5}&=x^{5}w.
+%\end{align*}
+%A similar proof is clear for $y^{5}$.
+\end{proof}
+
+\begin{lemma} If $G_0$ is left-orderable, then $wx^{n}w^{-1}$ has the same sign as $x$ for any $w\in{}G_0$ and for any $n\geq{}1$. Similarly, $wy^{n}w^{-1}$ has the same sign as $y$ for any $w\in{}G_0$ and for any $n\geq{}1$.
+\label{lemma:G_0:conjugates}
+\end{lemma}
+\begin{proof} Suppose $G_0$ is left-orderable. We know by Lemma~\ref{lemma:G_0:center} that for any $w\in{}G_0$:
+\begin{align*}
+wx^{5}w^{-1}=ww^{-1}x^{5}=x^{5}.
+\end{align*}
+By Proposition~\ref{proposition:pospowers}, $x^5$ has the same sign as $x$, and thus $wx^{5}w^{-1}$ has the same sign as $x$. But $wx^{5}w^{-1}=(wxw^{-1})^{5}$, and so by Proposition~\ref{proposition:pospowers} $wxw^{-1}$ has the same sign as $wx^{5}w^{-1}$ and therefore has the same sign as $x$. A similar proof works for $y$.
+\end{proof}
+
+\begin{lemma} If $G_0$ is left-orderable and $x>1$, then $x^{-2}y^{2}>1$.
+\label{lemma:G_0:XXyy}
+\end{lemma}
+\begin{proof}
+Suppose $G_0$ is left-orderable and suppose $x>1$. Then $x^5>1$ and $(x^{-2}y^2)^{3}>1$ since $(x^{-2}y^2)^{3}=x^5$. By Proposition~\ref{proposition:pospowers} this shows that $x^{-2}y^2>1$.
+\end{proof}
+
+\begin{proposition}
+The group $G_0=\langle x,\; y \mid{} (x^{-2}y^{2})^{3}=x^{5}=y^{5} \rangle$ is not left-orderable.
+\label{propG0}
+\end{proposition}
+\begin{proof} Suppose (for contradiction) that $G_0$ is left-orderable. First note that if $x=1$, then $y^5=1$. Then either $y=1$ as well and $G_0$ is trivial, or $y\neq{}1$ and $G_0$ has torsion and is therefore not left-orderable by Fact~\ref{fact:torsion}, a contradiction. Thus by Fact~\ref{fact:WLOG} we can assume without loss of generality that $x>1$. Note that $x>1$ implies $x^5=y^5>1$ which implies $y>1$ by Proposition~\ref{proposition:pospowers}. Starting with the group relation, we have:
+\begin{align}
+x^{-2}y^{2}x^{-2}y^{2}x^{-2}y^{2}&=y^{5}\nonumber{}\\
+x^{-2}y^{2}x^{-2}y^{2}x^{-2}&=y^{3}\nonumber{}\\
+x^{-2}y^{2}x^{-2}y^{2}x^{2}&=y^{3}x^{4}\nonumber{}\\
+x^{-2}y^{2}x^{-2}y^{2}x^{2}&=x^{5}y^{3}x^{-1}
+\label{x5center}\\
+y^{2}x^{-2}y^{2}x^{2} & =x^{7}y^{3}x^{-1}\nonumber{}\\
+y^{-2}x^{-2}y^{2}x^{2} & =y^{-4}x^{7}y^{3}x^{-1}\nonumber{}\\
+[x^{-2}y^{-2}]x^{-2}[y^{2}x^{2}] & =x^{-2}y^{-4}x^{5}x^{2}y^{3}x^{-1}\nonumber{}\\
+& =x^{-2}yx^{2}y^{3}x^{-1}
+\label{x5=y5}\\
+[(x^{-1})x^{-2}y^{-2}]x^{-2}[y^{2}x^{2}(x)] & =(x^{-1})x^{-2}yx^{2}y^{3}x^{-1}(x)\nonumber{}\\
+[(y^{3})x^{-3}y^{-2}]x^{-2}[y^{2}x^{3}(y^{-3})] & =(y^{3})x^{-3}yx^{2}(y^{3}y^{-3})\nonumber{}\\
+[(x^{-2})y^{3}x^{-3}y^{-2}]x^{-2}[y^{2}x^{3}y^{-3}(x^{2})] & =(x^{-2})y^{3}x^{-3}yx^{2}(x^{2})\nonumber{}\\
+[x^{-2}y^{3}x^{-3}y^{-2}] x^{-2} [x^{-2}y^{3}x^{-3}y^{-2}]^{-1} & =[x^{-2}y^{2}]y[(x^{-3})y(x^{3})]x.
+\label{PFcontraG0}
+\end{align}
+Where for (\ref{x5center}) we have used the fact (shown in Lemma~\ref{lemma:G_0:center}) that $x^5$ commutes with any element of $G_0$, for (\ref{x5=y5}) we have used the group relation $x^{5}=y^{5}$. Now in (\ref{PFcontraG0}), the right expression must be positive since $x>1$, $y>1$, $x^{-2}y^{2}>1$ by Lemma~\ref{lemma:G_0:XXyy}, and $(x^{-3})y(x^{3})>1$ by Lemma~\ref{lemma:G_0:conjugates}. However, the expression on the left is negative by Lemma~\ref{lemma:G_0:conjugates} since it is of the form $(wx^{-1}w^{-1})^{2}$ for some $w\in{}G_0$. This is a contradiction.
+\end{proof}
+
+\begin{remark}
+An alternative proof of Proposition \ref{propG0} follows from the fact that $K_0$ is a Montesino knot, and hence $\Sigma{}(K_0)$ is a Seifert fibered space. Proposition \ref{propG0} then follows from \cite[Theorem 4]{BoyerGordonWatson}.
+\end{remark}
