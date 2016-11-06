@@ -18,7 +18,7 @@ class BruteLO {
 	public static int casenum = 0;
 	public static void main(String[] args) throws java.io.FileNotFoundException{
 		// "user", "pairwise", "brute", "none"
-		String inputType = "pairwise";
+		String inputType = "brute";
 		visited = new boolean[100][300][30];
 		
 		conjugates.add("");
@@ -314,6 +314,8 @@ class BruteLO {
 		//enlargeBruteList();
 		//enlargeBruteList();
 		//enlargeBruteList();
+		//enlargeBruteList();
+		//enlargeBruteList();//6
 		while(true) {
 			String searchString = bruteGetNextElement();
 			String invertedSearchString = invert(searchString);
@@ -341,6 +343,19 @@ class BruteLO {
 				System.out.println("? "+searchString+", "+invertedSearchString+" inconclusive");
 			}
 			if(contra1 && contra2) {
+				boolean testIdentity = false;
+				for(int j = 0; j < searchString.length(); j++) {
+					String searchStringRotation = searchString.substring(j) + searchString.substring(0,j);
+					for(int i = 0; i < identities.size(); i++) {
+						if(identities.get(i).equals(searchStringRotation) || identities.get(i).equals(invert(searchStringRotation))) {
+							testIdentity = true;
+						}
+					}
+				}
+				if(testIdentity) {
+					System.out.println(searchString+ " = 1" );
+					continue;
+				}
 				System.out.println("! "+searchString+ " General Contradiction!");
 				System.out.println("posCone: "+posCone.toString());
 				return;
@@ -415,7 +430,9 @@ class BruteLO {
 		}
 		if(fromIndex>=searchString.length()){
 			boolean returnable = (posFromIndex>=posCone.get(posI).length());
-			if(returnable){System.out.print(posCone.get(posI)+", ");}
+			if(returnable){
+				System.out.print(posCone.get(posI)+", ");
+			}
 			return returnable;
 		}
 		
