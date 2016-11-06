@@ -10,23 +10,29 @@ B
 C
 D
 
-
-//Case I test
-/*
-Baa
-Bab
-cDA
-cDB
-
-AAb
-BAb
-adC
-bdC
-*/
-
-Dbb
-DAc
-DBc
+aC
+aD
+bA
+bC
+bD
+dC
+Ca
+Cb
+Cd
+Da
+Db
+aaC
+aaD
+abC
+abD
+cAC
+cAD
+cBC
+cBD
+AbA
+AbD
+AcA
+AcB
 
 AdA
 AdB
@@ -105,7 +111,6 @@ CBc
 DAc
 DBc
 AbDaa
-
 AbCaa
 AAdCb
 AbCba
