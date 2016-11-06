@@ -16,7 +16,7 @@ class BruteLO{
 	
 	public static int casenum = 0;
 	public static void main(String[] args) throws java.io.FileNotFoundException{
-		visited = new boolean[250][200][30];
+		visited = new boolean[100][200][30];
 		conjugates.add("");
 		bruteList = new ArrayList<String>();
 		bruteList.add("");
@@ -65,7 +65,7 @@ class BruteLO{
 			}
 		}
 		if(!checkConjugates) {
-			maxPosElementLength = 10000;
+			//maxPosElementLength = 10000;
 		}
 		
 		/*
@@ -132,19 +132,17 @@ class BruteLO{
 			}
 		}
 		
-		// USER INPUT FOR IDENTITIES
+		/* // USER INPUT FOR IDENTITIES
 		Scanner console = new Scanner(System.in);
 		while(true) {
-			System.out.println("Next Thing to Check:");
 			String searchString = console.nextLine();
 			System.out.println();
 			System.out.println(searchString);
 			System.out.println("String sign: "+stringSign(searchString));
 		}
-		
+		*/
 		
 		// USER INPUT FOR POSCONES
-		/*
 		Scanner console = new Scanner(System.in);
 		while(true) {
 			System.out.println("Enter case to test:");
@@ -166,17 +164,18 @@ class BruteLO{
 			if(contra1 && contra2) {
 				System.out.println("---General Contradiction!");
 			}
-			
-			
+		
+		
 		}
-		*/
+		
+		
 		/*
 		// BRUTE INPUT FOR POSCONES
 		enlargeBruteList();
-		enlargeBruteList();
-		enlargeBruteList();
-		enlargeBruteList();
-		enlargeBruteList();
+		//enlargeBruteList();
+		//enlargeBruteList();
+		//enlargeBruteList();
+		//enlargeBruteList();
 		while(true) {
 			String searchString = bruteGetNextElement();
 			String invertedSearchString = invert(searchString);
@@ -212,6 +211,7 @@ class BruteLO{
 		*/
 		
 		
+		
 	}
 	//returns +1 if positive, -1 if negative, 0 if unknown
 	public static int stringSign(String searchString) {
@@ -230,7 +230,7 @@ class BruteLO{
 	/*Checks if a string is positive accounting for all rotations*/
 	public static boolean isPositive(String searchString) {
 		String cyclicString = searchString;
-		//maxPosElementLength = 100000;
+		maxPosElementLength = 100000;
 		for(int i=0; i<Math.min(cyclicString.length(), maxPosElementLength); i++) {
 			if(outputMode) {
 				System.out.println(cyclicString);

@@ -43,7 +43,7 @@ DcccBdCbCC
 
 // 16
 AdAbCb
-
+/*
 // 17
 BaBaBaBaBaBaBaBaBaBabAbAbAbAbAbAbAbAbAbAdCdCdCdCdCdCdCdCdCdCdCdCdCDcDcDcDcDcDcDcDcDcDcDcDcDc
 
@@ -69,7 +69,7 @@ DcCbCCCdccBc
 CdddAdDcDaDD
 //
 //
-
+*/
 
 
 // #?
