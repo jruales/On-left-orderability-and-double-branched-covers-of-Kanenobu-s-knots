@@ -1,4 +1,4 @@
-#README
+# README
 Here's roughly how to use the program:
 
 First, add all the "identities" you know or have derived to the file `identities.txt`. Each identity should occupy a line. Blank lines an lines preceded by double slash ("//") are ignored by the program. You can also ignore a whole block by surrounding it with "/*" and "*/". Each identity consists of a sequence of lowercase and uppercase letters, where the uppercase letters represent the inverse of the lowercase counterparts. There's no need to include all the rotations or even the inverse of a particular identity.
