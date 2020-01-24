@@ -1,11 +1,11 @@
 # On left orderability and double branched covers of Kanenobu's knots
 LaTeX source and algorithm implementation of the paper "On left-orderability and double branched covers of Kanenobu’s knots" by F. Doria Medina, M. Jackson, J. Ruales, and H. Zeilberger
 
-##Links
+## Links
 * JKTR print: http://www.worldscientific.com/doi/abs/10.1142/S0218216515500716
 * arXiv preprint: https://arxiv.org/abs/1310.1877
 
-##BibTeX
+## BibTeX
 ```latex
 @article{doi:10.1142/S0218216515500716,
     author = {{Doria Medina}, Fabian and {Jackson}, Michael and {Ruales}, Joaquín and {Zeilberger}, Hadas},
