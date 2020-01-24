@@ -1,7 +1,7 @@
 # README
 Here's roughly how to use the program:
 
-First, add all the "identities" you know or have derived to the file `identities.txt`. Each identity should occupy a line. Blank lines an lines preceded by double slash ("//") are ignored by the program. You can also ignore a whole block by surrounding it with "/*" and "*/". Each identity consists of a sequence of lowercase and uppercase letters, where the uppercase letters represent the inverse of the lowercase counterparts. There's no need to include all the rotations or even the inverse of a particular identity.
+First, add all the "identities" you know or have derived to the file `identities.txt`. Each identity should occupy a line. Blank lines an lines preceded by double slash ("//") are ignored by the program. You can also ignore a whole block by surrounding it with "/\*" and "\*/". Each identity consists of a sequence of lowercase and uppercase letters, where the uppercase letters represent the inverse of the lowercase counterparts. There's no need to include all the rotations or even the inverse of a particular identity.
 For example, if you include `AdAbCb`, you don't need to also include e.g. `bCbAdA`, or `BcBaDa`.
 
 Second, add all elements that you know for certain are positive into the file `posCone.txt`. These could have been derived by hand, found through a previous run of the program, or even based on a case split like we did on the paper. This file has the same format as `identities.txt`.
